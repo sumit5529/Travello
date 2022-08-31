@@ -10,11 +10,28 @@
    <h2>Login </h2>
     <form action="login" method="Post">
         {% csrf_token %}
-        <input type="text" name="username" placeholder="username"> <br>
-        <input type="password" name="password" placeholder="password"> <br>
-        <input type="Submit">
+       
+        <label for="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" required>
+    
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+            
+        <button type="submit">Login</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+       
 
     </form>
+  
+
+
+
+
+
+
+
     <div>
         {% for message in messages %}
         <h3> {{message}}</h3>
